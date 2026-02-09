@@ -23,3 +23,5 @@ typedef struct s_stack
 	int				index;
 	struct s_stack	*next;
 } t_stack;
+
+#endif
