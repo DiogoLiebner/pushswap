@@ -1,0 +1,38 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    MAKEFILE                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/02/10 15:31:26 by dlima-li          #+#    #+#              #
+#    Updated: 2026/02/10 15:31:26 by dlima-li         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+SRCS =		$(wildcard srcs/*.c)
+
+OFILES =	$(SRCS:.c=.o)
+
+CC =		cc
+CFLAGS =	-Wall -Wextra -Werror
+
+NAME =		pushswap.a
+
+%.o: %.cc
+			$(CC) $(CFLAGS) -c $< -o $@
+
+all:		(NAME)
+
+$(NAME):	$(OFILES)
+			ar rcs $(NAME) $(OFILES)
+
+clean:
+			rm -f $(OFILES)
+
+fclean:		clean
+			rm -f $(NAME)
+
+re:			fclean $(NAME)
+
+.PHONY:		all clean fclean re
