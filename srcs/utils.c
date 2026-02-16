@@ -26,7 +26,7 @@ void	ft_putstr_fd(char *str, int fd)
 		return ;
 	i = 0;
 	while (str[i])
-		write(fd, &s[i++], 1);
+		write(fd, &str[i++], 1);
 }
 
 int ft_strcmp(char *str1, char *str2)
