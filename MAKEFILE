@@ -19,7 +19,7 @@ CFLAGS =	-Wall -Wextra -Werror
 
 NAME =		pushswap.a
 
-%.o: %.cc
+%.o: %.c
 			$(CC) $(CFLAGS) -c $< -o $@
 
 all:		(NAME)
