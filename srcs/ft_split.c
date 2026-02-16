@@ -60,7 +60,7 @@ static int	ft_wordcount(const char *str, char c)
 			str++;
 		if (*str)
 		{
-			count ++;
+			count++;
 			while (*str && !ft_delimcheck(*str, c))
 				str++;
 		}
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 	char	**arrres;
 	size_t	i;
 
-	i = 0l
+	i = 0;
 	if (!s)
 		return (NULL);
 	arrres = ft_calloc(ft_wordcount(s, c) + 1, sizeof(char *));
