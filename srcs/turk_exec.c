@@ -48,8 +48,8 @@ void	exec_cheap_move(t_stack **stack_a, t_stack **stack_b, int pos_b, int tarpos
 
 	size_a = stack_size(*stack_a);
 	size_b = stack_size(*stack_b);
-	if (pos <= size_b / 2 && tarpos_a <= size_a / 2)
-		rot_both(stack_a, stack_b, &tarpos_a > size_a / 2);
+	if (pos_b <= size_b / 2 && tarpos_a <= size_a / 2)
+		rot_both(stack_a, stack_b, &tarpos_a, &pos_b);
 	else if (pos_b > size_b / 2 && tarpos_a > size_a / 2)
 	{
 		tarpos_a = size_a - tarpos_a;
