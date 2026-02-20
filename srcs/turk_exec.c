@@ -41,30 +41,29 @@ void	rotate_to_top(t_stack **stack, int pos, int is_a)
 	}
 }
 
-void	exec_cheap_move(t_stack **stack_a, t_stack **stack_b, int pos_b, int target_pos_a)
+void	exec_cheap_move(t_stack **stack_a, t_stack **stack_b, int pos_b, int tarpos_a)
 {
 	int	size_a;
 	int	size_b;
 
 	size_a = stack_size(*stack_a);
 	size_b = stack_size(*stack_b);
-	if (pos_b <= size_b / 2 && target_pos_a <= size_a / 2)
-		rotate_both(stack_a, stack_b, &target_pos_a, &pos_b);
-	else if (pos_b > size_b / 2 && target_pos_a > size_a / 2)
+	if (pos <= size_b / 2 && tarpos_a <= size_a / 2)
+		rot_both(stack_a, stack_b, &tarpos_a > size_a / 2);
+	else if (pos_b > size_b / 2 && tarpos_a > size_a / 2)
 	{
-		target_pos_a = size_a - target_pos_a;
+		tarpos_a = size_a - tarpos_a;
 		pos_b = size_b - pos_b;
-		reverse_rotate_both(stack_a, stack_b &target_pos_a, &pos_b);
-		target_pos_a = 0;
+		rrot_both(stack_a, stack_b, &tarpos_a, &pos_b);
+		tarpos_a = 0;
 		pos_b = 0;
 	}
-	rotate_to_top(stack_a, target_pos_a, 1);
-	rotate_to_top(stack_b, pos_b, 0);
-	pa(stack_a, stack_b, 1);
+	rotate_to_top(stack_a, tarpos_a, 1);
+	rotate_to_top(stack_b, pos_b, 1);
 }
 
 void	push_to_b(t_stack **stack_a, t_stack **stack_b)
-{
+{,
 	int	size;
 	int	pushed;
 
@@ -75,7 +74,7 @@ void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 		pb(stack_a, stack_b, 1);
 		pushed++;
 		size--;
-		fi (pushed > 1 && (*stack_b)->value < (*stack_b)->next->value)
+		if (pushed > 1 && (*stack_b)->value < (*stack_b)->next->value)
 			rb(stack_b, 1);
 	}
 }
