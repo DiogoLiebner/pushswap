@@ -41,7 +41,7 @@ int	find_max(t_stack *stack)
 			max = stack->value;
 		stack = stack->next;
 	}
-	return (min);
+	return (max);
 }
 
 int	find_position(t_stack *stack, int value)
