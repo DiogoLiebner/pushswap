@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	{
 		return (0);
 	}
-	initstack(&stack_a, argc, argv);
+	init_stack(&stack_a, argc, argv);
 	if (!stack_a || has_duplicates(stack_a))
 	{
 		free_stack(&stack_a);

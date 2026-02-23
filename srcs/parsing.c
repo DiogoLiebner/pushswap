@@ -49,16 +49,16 @@ long	ft_atol(char *str)
 		result = result * 10 + (str[i++] - '0');
 	return (result * sign);
 }
-void	input_errorcheck(char **args)
+void	input_errorcheck(char *args)
 {
 	long	num;
 
-	if (!is_valid_number(args[j]))
+	if (!is_valid_number(args))
 	{
 		free_split(args);
 		error_exit();
 	}
-	num = ft_atol(args[j]);
+	num = ft_atol(args);
 	if (num > INT_MAX || num < INT_MIN)
 	{
 		free_split(args);
@@ -80,10 +80,10 @@ void	init_stack(t_stack **stack, int argc, char **argv)
 		while (args[j])
 		{
 			input_errorcheck(args[j]);
-			stack_addback(stack, stack_new(int)num);
+			stack_addback(stack, stack_new(ft_atoi(args[j])));
 			j++;
 		}
 		free_split(args);
-		i++:
+		i++;
 	}
 }

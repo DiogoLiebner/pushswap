@@ -35,9 +35,9 @@ void	ra(t_stack **stack_a, int print)
 
 void	rb(t_stack **stack_b, int print)
 {
-	rotate(stack_a);
+	rotate(stack_b);
 	if (print)
-		ft_putstr_fd("ra\n", 1);
+		ft_putstr_fd("rb\n", 1);
 }
 
 void	rr(t_stack **stack_a, t_stack **stack_b, int print)
