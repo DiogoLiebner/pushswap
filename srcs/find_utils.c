@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils2.c                                     :+:      :+:    :+:   */
+/*   find_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -41,7 +41,7 @@ int	find_max(t_stack *stack)
 			max = stack->value;
 		stack = stack->next;
 	}
-	return (min);
+	return (max);
 }
 
 int	find_position(t_stack *stack, int value)

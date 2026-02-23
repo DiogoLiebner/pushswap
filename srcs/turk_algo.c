@@ -33,12 +33,12 @@ int	find_target_pos(t_stack *stack_a, int value)
 		pos++;
 		temp = temp->next;
 	}
-	if (target_value == INT_MAX)
+	if (target_value == INT_MAX)oboth(
 		target_pos = find_position(stack_a, find_min(stack_a));
 	return (target_pos);
 }
 
-int	calc_cost(t_stack *stack_a, t_stack stack_b, int pos, int target_pos_a)
+int	calc_cost(t_stack *stack_a, t_stack *stack_b, int pos_b, int targ_pos_a)
 {
 	int	size_a;
 	int	size_b;
@@ -47,10 +47,10 @@ int	calc_cost(t_stack *stack_a, t_stack stack_b, int pos, int target_pos_a)
 
 	size_a = stack_size(stack_a);
 	size_b = stack_size(stack_b);
-	if (target_pos_a <= size_a / 2)
-		cost_a = target_pos_a;
+	if (targ_pos_a <= size_a / 2)
+		cost_a = targ_pos_a;
 	else
-		cost_a = size_a - target_pos_a;
+		cost_a = size_a - targ_pos_a;
 	if (pos_b <= size_b / 2)
 		cost_b = pos_b;
 	else
@@ -63,7 +63,7 @@ void	find_cheapest(t_stack *stack_a, t_stack stack_b, int *best_pos_b, int best_
 	t_stack	*temp;
 	int		pos_b;
 	int		target_pos_a;
-	int		cost;
+	int		cost;oboth(
 	int		min_cost;
 
 	min_cost = INT_MAX;
