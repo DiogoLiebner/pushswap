@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-static int	ft_delimcheck(char s, char delim)
+int	ft_delimcheck(char s, char delim)
 {
 	return (s == delim);
 }
 
-static void	*ft_free(char **strs, int count)
+void	*ft_free(char **strs, int count)
 {
 	while (count >= 0)
 		free(strs[count--]);
@@ -25,7 +25,7 @@ static void	*ft_free(char **strs, int count)
 	return (NULL);
 }
 
-static char	*ft_strndup(const char *src, char delim)
+char	*ft_strndup(const char *src, char delim)
 {
 	char	*dest;
 	int		i;
@@ -49,7 +49,7 @@ static char	*ft_strndup(const char *src, char delim)
 	return (dest);
 }
 
-static int	ft_wordcount(const char *str, char c)
+int	ft_wordcount(const char *str, char c)
 {
 	int	count;
 
