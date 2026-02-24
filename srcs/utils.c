@@ -38,3 +38,16 @@ int ft_strcmp(char *str1, char *str2)
 		i++;
 	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
+
+int	stack_size(t_stack *stack)
+{
+	int	size;
+
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
+}
