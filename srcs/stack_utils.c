@@ -11,26 +11,12 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int		stack_size(t_stack *stack)
-{
-	int	size;
-
-	size = 0;
-	while (stack)
-	{
-		size++;
-		stack = stack->next;
-	}
-	return (size);
-}
-
 t_stack	*stack_new(int value)
 {
-	t_stack *new;
+	t_stack	*new;
 
 	new = malloc(sizeof(t_stack));
-	if	(!new)
+	if (!new)
 		return (NULL);
 	new->value = value;
 	new->index = -1;
@@ -50,9 +36,10 @@ t_stack	*stack_last(t_stack *stack)
 void	*stack_addfront(t_stack **stack, t_stack *new)
 {
 	if (!new)
-		return ;
+		return (NULL);
 	new->next = *stack;
 	*stack = new;
+	return (*stack);
 }
 
 void	*stack_addback(t_stack **stack, t_stack *new)
@@ -60,19 +47,20 @@ void	*stack_addback(t_stack **stack, t_stack *new)
 	t_stack	*last;
 
 	if (!new)
-		return ;
+		return (NULL);
 	if (!*stack)
 	{
 		*stack = new;
-		return ;
+		return (NULL);
 	}
 	last = stack_last(*stack);
 	last->next = new;
+	return (*stack);
 }
 
 void	free_stack(t_stack **stack)
 {
-	t_stack	temp;
+	t_stack	*temp;
 
 	if (!stack || !*stack)
 		return ;
