@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 16:01:41 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/09 16:01:41 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/16 15:53:45 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/24 18:20:55 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void	ft_putstr_fd(char *str, int fd)
 		write(fd, &str[i++], 1);
 }
 
-int ft_strcmp(char *str1, char *str2)
+int	ft_strcmp(char *str1, char *str2)
 {
 	int	i;
 
 	i = 0;
 	while (str1[i] && str2[i] && str1[i] == str2[i])
 		i++;
-	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+	return (str1[i] = str2[i]);
 }
 
 int	stack_size(t_stack *stack)

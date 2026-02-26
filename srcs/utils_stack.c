@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   utils_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 15:51:25 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/10 15:51:25 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/16 16:18:57 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/26 21:46:00 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-t_stack	*stack_new(int value)
+
+t_stack	*stack_new(long value)
 {
 	t_stack	*new;
 
@@ -51,7 +52,7 @@ void	*stack_addback(t_stack **stack, t_stack *new)
 	if (!*stack)
 	{
 		*stack = new;
-		return (NULL);
+		return (*stack);
 	}
 	last = stack_last(*stack);
 	last->next = new;

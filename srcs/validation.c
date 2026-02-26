@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 15:30:08 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/10 15:30:08 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/16 15:36:42 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/16 17:28:16 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	has_duplicates(t_stack *stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	while (stack)
 	{

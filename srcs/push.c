@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:41:59 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/09 15:41:59 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/16 17:17:13 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/24 18:08:21 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	push(t_stack **dest, t_stack **src)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (!*src)
 		return ;
@@ -24,7 +24,7 @@ void	push(t_stack **dest, t_stack **src)
 	*dest = temp;
 }
 
-void 	pa(t_stack **stack_a, t_stack **stack_b, int print)
+void	pa(t_stack **stack_a, t_stack **stack_b, int print)
 {
 	push(stack_a, stack_b);
 	if (print)

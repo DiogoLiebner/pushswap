@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 16:32:31 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/18 16:32:31 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/20 15:55:30 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/24 17:50:31 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push_min_to_b(t_stack **stack_a, t_stack **stack_b)
+void	push_min_to_b(t_stack **stack_a, t_stack **stack_b)
 {
 	int	min;
 	int	pos;

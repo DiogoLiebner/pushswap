@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 16:29:41 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/18 16:29:41 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/20 16:02:10 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/20 16:11:22 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sort_three(t_stack **stack_a)
 {
 	int	max;
 
-	if(is_sorted(*stack_a))
+	if (is_sorted(*stack_a))
 		return ;
 	max = find_max(*stack_a);
 	if ((*stack_a)->value == max)

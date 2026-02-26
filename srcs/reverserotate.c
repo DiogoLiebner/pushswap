@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 15:10:52 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/10 15:10:52 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/16 17:16:34 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/24 18:08:33 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	reverse_rotate(t_stack **stack)
 {
-	t_stack *last;
-	t_stack *second_last;
+	t_stack	*last;
+	t_stack	*second_last;
 
 	if (!*stack || !(*stack)->next)
 		return ;
@@ -34,14 +34,14 @@ void	reverse_rotate(t_stack **stack)
 void	rra(t_stack **stack_a, int print)
 {
 	reverse_rotate(stack_a);
-	if (print);
+	if (print)
 		ft_putstr_fd("rra\n", 1);
 }
 
 void	rrb(t_stack **stack_b, int print)
 {
 	reverse_rotate(stack_b);
-	if (print);
+	if (print)
 		ft_putstr_fd("rrb\n", 1);
 }
 

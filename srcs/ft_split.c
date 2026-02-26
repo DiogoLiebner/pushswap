@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 17:09:24 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/09 17:09:24 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/16 15:17:32 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/26 22:24:17 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ int	ft_delimcheck(char s, char delim)
 
 void	*ft_free(char **strs, int count)
 {
-	while (count >= 0)
-		free(strs[count--]);
+	while (count > 0)
+		free(strs[--count]);
+	if (strs[0])
+		free(strs[0]);
 	free(strs);
 	return (NULL);
 }
@@ -30,7 +32,7 @@ char	*ft_strndup(const char *src, char delim)
 	char	*dest;
 	int		i;
 	int		len;
-	
+
 	i = 0;
 	len = 0;
 	if (!src)
@@ -68,7 +70,7 @@ int	ft_wordcount(const char *str, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**arrres;
 	size_t	i;

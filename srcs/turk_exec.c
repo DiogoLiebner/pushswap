@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 19:03:18 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/18 19:03:18 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/20 16:11:44 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/24 17:40:02 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	rotate_to_top(t_stack **stack, int pos, int is_a)
 	}
 }
 
-void	exec_cheap_move(t_stack **stack_a, t_stack **stack_b, int pos_b, int tarpos_a)
+void	exec_cheap_move(t_stack **stack_a, t_stack **stack_b,
+			int pos_b, int tarpos_a)
 {
 	int	size_a;
 	int	size_b;
@@ -49,12 +50,12 @@ void	exec_cheap_move(t_stack **stack_a, t_stack **stack_b, int pos_b, int tarpos
 	size_a = stack_size(*stack_a);
 	size_b = stack_size(*stack_b);
 	if (pos_b <= size_b / 2 && tarpos_a <= size_a / 2)
-		rotate_both(stack_a, stack_b, &tarpos_a, &pos_b);
+		rot_both(stack_a, stack_b, &tarpos_a, &pos_b);
 	else if (pos_b > size_b / 2 && tarpos_a > size_a / 2)
 	{
 		tarpos_a = size_a - tarpos_a;
 		pos_b = size_b - pos_b;
-		reverse_rotate_both(stack_a, stack_b, &tarpos_a, &pos_b);
+		rrot_both(stack_a, stack_b, &tarpos_a, &pos_b);
 		tarpos_a = 0;
 		pos_b = 0;
 	}
@@ -113,9 +114,9 @@ void	turk_sort(t_stack **stack_a, t_stack **stack_b)
 	sort_three(stack_a);
 	while (*stack_b)
 	{
-		find_cheapest(*stack_a, *stack_b, &best_pos_b, &best_target_a);
+		find_cheap(*stack_a, *stack_b, &best_pos_b, &best_target_a);
 		exec_cheap_move(stack_a, stack_b, best_pos_b, best_target_a);
 	}
 	if (!is_sorted(*stack_a))
-		rotate_to_top(stack_a, min_pos, 1);
+		rotate_to_top(stack_a, best_target_a, 1);
 }

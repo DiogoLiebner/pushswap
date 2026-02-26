@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:23:11 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/09 15:23:11 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/16 14:53:35 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/26 21:55:15 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		stack_size(t_stack *stack);
 void	*stack_addfront(t_stack **stack, t_stack *new);
 void	*stack_addback(t_stack **stack, t_stack *new);
 void	free_stack(t_stack **stack);
-t_stack	*stack_new(int value);
+t_stack	*stack_new(long value);
 t_stack	*stack_last(t_stack *stack);
 
 int		find_min(t_stack *stack);
@@ -66,7 +66,7 @@ int		ft_wordcount(const char *str, char c);
 
 int		is_valid_number(char *str);
 long	ft_atol(char *str);
-void	input_errorcheck(char **args);
+void	input_errorcheck(char *args);
 void	init_stack(t_stack **stack, int argc, char **argv);
 
 void	sort_three(t_stack **stack_a);
@@ -89,6 +89,6 @@ void	push_to_b(t_stack **stack_a, t_stack **stack_b);
 void	final_rotation(t_stack **stack_a);
 void	turk_sort(t_stack **stack_a, t_stack **stack_b);
 
-void	sort_stack(t_stack *stack_a, t_stack *stack_b);
+void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 #endif

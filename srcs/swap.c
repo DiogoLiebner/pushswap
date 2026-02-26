@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:35:09 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/09 15:35:09 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/16 17:16:12 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/24 18:08:29 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	swap(t_stack **stack)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
 	if (!*stack || !(*stack)->next)
-	return ;
-	fist = *stack;
+		return ;
+	first = *stack;
 	second = first->next;
 	first->next = second->next;
 	second->next = first;
@@ -35,15 +35,15 @@ void	sa(t_stack **stack_a, int print)
 
 void	sb(t_stack **stack_b, int print)
 {
-	swap (stack_a);
+	swap(stack_b);
 	if (print)
 		ft_putstr_fd("sb\n", 1);
 }
 
-void	ss(t_stack **stack_a, int print)
+void	ss(t_stack **stack_a, t_stack **stack_b, int print)
 {
 	swap(stack_a);
 	swap(stack_b);
 	if (print)
-		fd_putstr_fd("ss\n", 1);
+		ft_putstr_fd("ss\n", 1);
 }

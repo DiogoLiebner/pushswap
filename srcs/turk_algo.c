@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 18:19:03 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/18 18:19:03 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/02/20 16:10:37 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/02/20 16:55:36 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	find_target_pos(t_stack *stack_a, int value)
 {
-	t_stack *temp;
+	t_stack	*temp;
 	int		target_pos;
 	int		target_value;
 	int		pos;
@@ -58,7 +58,8 @@ int	calc_cost(t_stack *stack_a, t_stack *stack_b, int pos_b, int targ_pos_a)
 	return (cost_a + cost_b);
 }
 
-void	find_cheapest(t_stack *stack_a, t_stack *stack_b, int best_pos_b, int best_target_a)
+void	find_cheap(t_stack *stack_a, t_stack *stack_b,
+		int *bestp_b, int *besttarg_a)
 {
 	t_stack	*temp;
 	int		pos_b;
@@ -68,23 +69,23 @@ void	find_cheapest(t_stack *stack_a, t_stack *stack_b, int best_pos_b, int best_
 
 	min_cost = INT_MAX;
 	pos_b = 0;
-	*temp = *stack_b;
-	while (temp->next)
+	temp = stack_b;
+	while (temp)
 	{
 		target_pos_a = find_target_pos(stack_a, temp->value);
 		cost = calc_cost(stack_a, stack_b, pos_b, target_pos_a);
 		if (cost < min_cost)
 		{
 			min_cost = cost;
-			best_pos_b = pos_b;
-			best_target_a = target_pos_a;
+			*bestp_b = pos_b;
+			*besttarg_a = target_pos_a;
 		}
 		pos_b++;
 		temp = temp->next;
 	}
 }
 
-void	rotate_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
+void	rot_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
 {
 	while (*pos_a > 0 && *pos_b > 0)
 	{
@@ -94,7 +95,7 @@ void	rotate_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
 	}
 }
 
-void	reverse_rotate_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
+void	rrot_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
 {
 	int	size_a;
 	int	size_b;
