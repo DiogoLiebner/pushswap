@@ -6,7 +6,7 @@
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:10:37 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/20 16:55:36 by dlima-li         ###   ########.fr       */
+/*   Updated: 2026/02/28 11:31:50 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,15 +97,10 @@ void	rot_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
 
 void	rrot_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
 {
-	int	size_a;
-	int	size_b;
-
-	size_a = stack_size(*stack_a);
-	size_b = stack_size(*stack_b);
-	while (*pos_a < size_a && *pos_b < size_b)
+	while (*pos_a > 0 && *pos_b > 0)
 	{
 		rrr(stack_a, stack_b, 1);
-		(*pos_a)++;
-		(*pos_b)++;
+		(*pos_a)--;
+		(*pos_b)--;
 	}
 }

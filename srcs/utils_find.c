@@ -6,7 +6,7 @@
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:05:00 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/20 17:35:34 by dlima-li         ###   ########.fr       */
+/*   Updated: 2026/02/28 11:31:48 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	find_min(t_stack *stack)
 	min = stack->value;
 	while (stack)
 	{
-		if (stack->value > min)
+		if (stack->value < min)
 			min = stack->value;
 		stack = stack->next;
 	}
@@ -37,7 +37,7 @@ int	find_max(t_stack *stack)
 	max = stack->value;
 	while (stack)
 	{
-		if (stack->value < max)
+		if (stack->value > max)
 			max = stack->value;
 		stack = stack->next;
 	}

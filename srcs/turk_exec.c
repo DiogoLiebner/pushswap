@@ -6,7 +6,7 @@
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:11:44 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/24 17:40:02 by dlima-li         ###   ########.fr       */
+/*   Updated: 2026/02/28 11:55:13 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,9 @@ void	exec_cheap_move(t_stack **stack_a, t_stack **stack_b,
 		tarpos_a = size_a - tarpos_a;
 		pos_b = size_b - pos_b;
 		rrot_both(stack_a, stack_b, &tarpos_a, &pos_b);
-		tarpos_a = 0;
-		pos_b = 0;
 	}
 	rotate_to_top(stack_a, tarpos_a, 1);
-	rotate_to_top(stack_b, pos_b, 1);
+	rotate_to_top(stack_b, pos_b, 0);
 }
 
 void	push_to_b(t_stack **stack_a, t_stack **stack_b)
