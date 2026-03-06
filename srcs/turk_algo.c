@@ -6,7 +6,7 @@
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:10:37 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/28 11:31:50 by dlima-li         ###   ########.fr       */
+/*   Updated: 2026/03/06 19:15:40 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,55 @@
 
 int	find_target_pos(t_stack *stack_a, int value)
 {
-	t_stack	*temp;
-	int		target_pos;
-	int		target_value;
-	int		pos;
+	// t_stack	*temp;
+	// int		target_pos;
+	// int		target_value;
+	// int		pos;
 
-	target_value = INT_MAX;
-	target_pos = 0;
-	pos = 0;
+	// target_value = INT_MAX;
+	// target_pos = 0;
+	// pos = 0;
+	// temp = stack_a;
+	// while (temp)
+	// {
+	// 	if (temp->value > value && temp->value < target_value)
+	// 	{
+	// 		target_value = temp->value;
+	// 		target_pos = pos;
+	// 	}
+	// 	pos++;
+	// 	temp = temp->next;
+	// }
+	// printf("find_target_pos: value=%d target_value=%d target_pos=%d\n",
+    //     value, target_value, target_pos);
+	// if (target_value == INT_MAX)
+	// 	target_pos = find_position(stack_a, find_min(stack_a));
+	// return (target_pos);
+	t_stack	*temp;
+	int		pos;
+	int		size;
+
+	size = stack_size(stack_a);
+	if (size == 0)
+		return (0);
 	temp = stack_a;
-	while (temp)
+	pos = 0;
+	while (temp->next)
 	{
-		if (temp->value > value && temp->value < target_value)
+		if (temp->value < temp->next->value)
 		{
-			target_value = temp->value;
-			target_pos = pos;
+			if (value > temp->value && value < temp->next->value)
+				return (pos + 1);
 		}
-		pos++;
+		else
+		{
+			if (value > temp->value || value < temp->next->value)
+				return (pos + 1);
+		}
 		temp = temp->next;
+		pos++;
 	}
-	if (target_value == INT_MAX)
-		target_pos = find_position(stack_a, find_min(stack_a));
-	return (target_pos);
+	return (0);
 }
 
 int	calc_cost(t_stack *stack_a, t_stack *stack_b, int pos_b, int targ_pos_a)

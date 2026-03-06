@@ -6,7 +6,7 @@
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 14:53:35 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/26 21:55:15 by dlima-li         ###   ########.fr       */
+/*   Updated: 2026/03/02 19:09:52 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdio.h>
 
 typedef struct s_stack
 {

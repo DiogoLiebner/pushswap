@@ -6,7 +6,7 @@
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:11:44 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/28 11:55:13 by dlima-li         ###   ########.fr       */
+/*   Updated: 2026/03/06 19:17:50 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,19 @@ void	rotate_to_top(t_stack **stack, int pos, int is_a)
 void	exec_cheap_move(t_stack **stack_a, t_stack **stack_b,
 			int pos_b, int tarpos_a)
 {
-	int	size_a;
-	int	size_b;
+// 	int	size_a;
+// 	int	size_b;
 
-	size_a = stack_size(*stack_a);
-	size_b = stack_size(*stack_b);
-	if (pos_b <= size_b / 2 && tarpos_a <= size_a / 2)
-		rot_both(stack_a, stack_b, &tarpos_a, &pos_b);
-	else if (pos_b > size_b / 2 && tarpos_a > size_a / 2)
-	{
-		tarpos_a = size_a - tarpos_a;
-		pos_b = size_b - pos_b;
-		rrot_both(stack_a, stack_b, &tarpos_a, &pos_b);
-	}
+// 	size_a = stack_size(*stack_a);
+// 	size_b = stack_size(*stack_b);
+// 	if (pos_b <= size_b / 2 && tarpos_a <= size_a / 2)
+// 		rot_both(stack_a, stack_b, &tarpos_a, &pos_b);
+// 	else if (pos_b > size_b / 2 && tarpos_a > size_a / 2)
+// 	{
+// 		tarpos_a = size_a - tarpos_a;
+// 		pos_b = size_b - pos_b;
+// 		rrot_both(stack_a, stack_b, &tarpos_a, &pos_b);
+// 	}
 	rotate_to_top(stack_a, tarpos_a, 1);
 	rotate_to_top(stack_b, pos_b, 0);
 }
