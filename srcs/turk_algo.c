@@ -112,22 +112,22 @@ void	find_cheap(t_stack *stack_a, t_stack *stack_b,
 	}
 }
 
-void	rot_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
-{
-	while (*pos_a > 0 && *pos_b > 0)
-	{
-		rr(stack_a, stack_b, 1);
-		(*pos_a)--;
-		(*pos_b)--;
-	}
-}
+// void	rot_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
+// {
+// 	while (*pos_a > 0 && *pos_b > 0)
+// 	{
+// 		rr(stack_a, stack_b, 1);
+// 		(*pos_a)--;
+// 		(*pos_b)--;
+// 	}
+// }
 
-void	rrot_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
-{
-	while (*pos_a > 0 && *pos_b > 0)
-	{
-		rrr(stack_a, stack_b, 1);
-		(*pos_a)--;
-		(*pos_b)--;
-	}
-}
+// void	rrot_both(t_stack **stack_a, t_stack **stack_b, int *pos_a, int *pos_b)
+// {
+// 	while (*pos_a > 0 && *pos_b > 0)
+// 	{
+// 		rrr(stack_a, stack_b, 1);
+// 		(*pos_a)--;
+// 		(*pos_b)--;
+// 	}
+// }

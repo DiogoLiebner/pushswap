@@ -78,10 +78,6 @@ int		calc_cost(t_stack *stack_a, t_stack *stack_b,
 			int pos_b, int targ_pos_a);
 void	find_cheap(t_stack *stack_a, t_stack *stack_b,
 			int *bestp_b, int *besttarg_a);
-void	rot_both(t_stack **stack_a, t_stack **stack_b,
-			int *pos_a, int *pos_b);
-void	rrot_both(t_stack **stack_a, t_stack **stack_b,
-			int *pos_a, int *pos_b);
 
 void	rotate_to_top(t_stack **stack, int pos, int is_a);
 void	cheap_move(t_stack **stack_a, t_stack **stack_b,
