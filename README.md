@@ -22,7 +22,7 @@ The allowed operations are:
 | 	ss 		| sa + sb |
 | 	pa 		| push the top of stack B onto stack A |
 | 	pb 		| push the top of stack A onto stack B |
-|	  ra	 	| rotate stack A (top becomes bottom) |
+|	ra	 	| rotate stack A (top becomes bottom) |
 | 	rb 		| rotate stack B |
 | 	rr 		| ra + rb |
 | 	rra		| reverse rotate stack A (bottom becomes top) |
@@ -81,3 +81,4 @@ Using linked lists rather than arrays avoids expensive element shifts on push/po
 42 push_swap Subject
 Valgrind - memory-leak checking
 Stack operations explained (https://levelupsynergy.in/articles/implementation-of-stack-in-c))
+Turk Algorithm (https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0)
