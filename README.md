@@ -49,6 +49,16 @@ You can also provide space-separated arguments (quoted):
 
 ./push_swap "4523 55 235 5437"
 
+In the provided subject, there is also a 'checker' program that can be used to verify the correctness of the operations output by 'push_swap'. You can pipe the output of 'push_swap' into 'checker' like this:
+
+./push_swap 3 2 1 5 4 | ./checker 3 2 1 5 4
+
+or
+
+ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
+
+The output of 'checker' will be "OK" if the operations correctly sort the input, or "KO" if they do not.
+
 ## Algorithm & Implementation
 
 ### Data structures
@@ -84,5 +94,5 @@ Using linked lists rather than arrays avoids expensive element shifts on push/po
 
 42 push_swap Subject
 Valgrind - memory-leak checking
-Stack operations explained (https://levelupsynergy.in/articles/implementation-of-stack-in-c))
-
+Stack operations explained (https://levelupsynergy.in/articles/implementation-of-stack-in-c)
+AI was used in this project help with the creation of the README.md file, and some studying of key concepts and algorithms.
