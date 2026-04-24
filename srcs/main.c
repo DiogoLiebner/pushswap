@@ -5,27 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 16:27:02 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/26 22:02:12 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/04/21 16:23:00 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/04/21 16:23:17 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	sort_stack(t_stack **stack_a, t_stack **stack_b)
-{
-	if (!is_sorted(*stack_a))
-	{
-		if (stack_size(*stack_a) == 2)
-			sa(stack_a, 1);
-		else if (stack_size(*stack_a) == 3)
-			sort_three(stack_a);
-		else if (stack_size(*stack_a) <= 5)
-			sort_small(stack_a, stack_b);
-		else
-			turk_sort(stack_a, stack_b);
-	}
-}
 
 int	main(int argc, char **argv)
 {

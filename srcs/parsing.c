@@ -6,7 +6,7 @@
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 14:58:49 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/02/26 22:33:28 by dlima-li         ###   ########.fr       */
+/*   Updated: 2026/04/21 16:22:58 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,37 @@ long	ft_atol(char *str)
 	return (result * sign);
 }
 
-void	input_errorcheck(char *args)
+int	input_errorcheck(char *args)
 {
 	long	num;
 
 	if (!is_valid_number(args))
-	{
-		free(args);
-		error_exit();
-	}
+		return (0);
 	num = ft_atol(args);
 	if (num > INT_MAX || num < INT_MIN)
+		return (0);
+	return (1);
+}
+
+void	free_error(t_stack **stack, char **args)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (args[i])
 	{
-		free(args);
-		error_exit();
+		if (!input_errorcheck(args[i]))
+		{
+			free_stack(stack);
+			j = 0;
+			while (args[j])
+				free(args[j++]);
+			free(args);
+			error_exit();
+		}
+		stack_addback(stack, stack_new(ft_atol(args[i])));
+		i++;
 	}
 }
 
@@ -81,14 +98,10 @@ void	init_stack(t_stack **stack, int argc, char **argv)
 	while (i < argc)
 	{
 		args = ft_split(argv[i], ' ');
+		if (!args)
+			error_exit();
 		j = 0;
-		while (args[j])
-		{
-			input_errorcheck(args[j]);
-			stack_addback(stack, stack_new(ft_atol(args[j])));
-			j++;
-		}
-		j = 0;
+		free_error(stack, args);
 		while (args[j])
 			free(args[j++]);
 		free(args);

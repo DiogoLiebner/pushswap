@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-li <dlima-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/16 14:53:35 by dlima-li          #+#    #+#             */
-/*   Updated: 2026/03/02 19:09:52 by dlima-li         ###   ########.fr       */
+/*   Created: 2026/04/21 16:23:27 by dlima-li          #+#    #+#             */
+/*   Updated: 2026/04/21 16:23:31 by dlima-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ int		ft_wordcount(const char *str, char c);
 
 int		is_valid_number(char *str);
 long	ft_atol(char *str);
-void	input_errorcheck(char *args);
+int		input_errorcheck(char *args);
+void	free_error(t_stack **stack, char **args);
 void	init_stack(t_stack **stack, int argc, char **argv);
 
 void	sort_three(t_stack **stack_a);
@@ -78,14 +79,15 @@ int		calc_cost(t_stack *stack_a, t_stack *stack_b,
 			int pos_b, int targ_pos_a);
 void	find_cheap(t_stack *stack_a, t_stack *stack_b,
 			int *bestp_b, int *besttarg_a);
+void	rot_both(t_stack **stack_a, t_stack **stack_b,
+			int *pos_a, int *pos_b);
+void	rrot_both(t_stack **stack_a, t_stack **stack_b,
+			int *pos_a, int *pos_b);
 
 void	rotate_to_top(t_stack **stack, int pos, int is_a);
-void	cheap_move(t_stack **stack_a, t_stack **stack_b,
-			int pos_b, int tarpos_a);
 void	push_to_b(t_stack **stack_a, t_stack **stack_b);
 void	final_rotation(t_stack **stack_a);
 void	turk_sort(t_stack **stack_a, t_stack **stack_b);
-
 void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 #endif

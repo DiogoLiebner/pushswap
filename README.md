@@ -35,7 +35,11 @@ The program must also detect invalid input (non-numeric values, duplicates, over
 
 ### Build
 
+Type:
+
 make
+
+in the terminal to compile the program. This will create an executable named 'push_swap'.
 
 ### Run
 
@@ -81,4 +85,4 @@ Using linked lists rather than arrays avoids expensive element shifts on push/po
 42 push_swap Subject
 Valgrind - memory-leak checking
 Stack operations explained (https://levelupsynergy.in/articles/implementation-of-stack-in-c))
-Turk Algorithm (https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0)
+
